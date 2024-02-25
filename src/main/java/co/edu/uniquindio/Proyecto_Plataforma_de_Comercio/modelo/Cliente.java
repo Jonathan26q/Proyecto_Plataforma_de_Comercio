@@ -13,7 +13,6 @@ import java.util.Objects;
 @ToString
 //solo se debe considerar la llave primaria de la clase entonces por ese se coloca el onlyExpl,aca y en el Id
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@NoArgsConstructor
 @Document("Clientes")
 public class Cliente implements Serializable {
 
@@ -24,5 +23,11 @@ public class Cliente implements Serializable {
     private String cedula, nombre, email;
     private List<String> telefono;
 
-
+    @Builder
+    public Cliente(String cedula, String nombre, String email, List<String> telefono) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.email = email;
+        this.telefono = telefono;
+    }
 }
