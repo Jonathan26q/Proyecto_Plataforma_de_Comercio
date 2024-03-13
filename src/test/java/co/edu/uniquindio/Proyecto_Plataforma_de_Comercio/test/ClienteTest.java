@@ -1,6 +1,7 @@
 package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.test;
 
-import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.Cliente;
+import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.dto.RegistroUsuarioDTO;
+import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.documentos.Cliente;
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.repositorios.ClienteRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Optional;
 
 //La clase ClienteTest necesita la anotación @SpringBootTest para que se ejecute en el contexto de prueba.
 @SpringBootTest
@@ -34,26 +36,58 @@ public class ClienteTest {
     }
     @Test
     public void actualizarClienteTest(){
+
+        Optional<Cliente> clienteOptional = clienteRepo.findById("XXXX");
+        if(clienteOptional.isEmpty()){
+            throw new RuntimeException("El id dado no existe");
+        }
+        Cliente cliente = clienteOptional.get();
+        cliente.setCiudad("Circasia");
+
+        clienteRepo.save(cliente);
+/*
         //Obtenemos el cliente con el id XXXXXXX
-        Cliente cliente = clienteRepo.findById("65daed38ccec074feed0c134").orElseThrow();
+        Cliente cliente = clienteRepo.findById("65dfc09453537e6a2e3b4711").orElseThrow();
         //Modificar el email del cliente
-        cliente.setEmail("TerceramodificacionedelEmaildePepito@email.com");
+        cliente.setEmail("novenamodificacionedelEmaildePepito@email.com");
         //Guardamos el cliente
         clienteRepo.save(cliente);
         //Obtenemos el cliente con el id XXXXXXX nuevamente
-        Cliente clienteActualizado = clienteRepo.findById("65daed38ccec074feed0c134").orElseThrow();
+        Cliente clienteActualizado = clienteRepo.findById("65dfc09453537e6a2e3b4711").orElseThrow();
         //Verificamos que el email se haya actualizado
-        Assertions.assertEquals("TerceramodificacionedelEmaildePepito@email.com",clienteActualizado.getEmail());
+        Assertions.assertEquals("novenamodificacionedelEmaildePepito@email.com",clienteActualizado.getEmail());
+        */
+
     }
 
     @Test
     public void eliminarClienteTest(){
         //Borramos el cliente con el id XXXXXXX
-        clienteRepo.deleteById("65daf59b0f39845dfbfc2eb6");
+        clienteRepo.deleteById("65dfc0b0a837600ac94f9d75");
         //Obtenemos el cliente con el id XXXXXXX
         Cliente cliente = clienteRepo.findById("65daf59b0f39845dfbfc2eb6").orElseThrow(null);
         //Verificamos que el cliente no exista
         Assertions.assertNotNull(cliente);
     }
+
+    @Test
+    public void dtoTest(){
+        RegistroUsuarioDTO registro = new RegistroUsuarioDTO(
+                nombre: "",
+                fotoPerfil: "",
+                nickname: "",
+                email: "",
+                contrasena: "",
+                ciudadResidencia: ""
+
+        );
+
+        System.out.println(registro.nickname());
+    }
+    /*
+    @Test
+    public void listarTest(){
+        List<Cliente>;
+    }*/
 }
 

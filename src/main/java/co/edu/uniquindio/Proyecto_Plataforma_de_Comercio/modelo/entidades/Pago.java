@@ -1,4 +1,4 @@
-package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo;
+package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.entidades;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

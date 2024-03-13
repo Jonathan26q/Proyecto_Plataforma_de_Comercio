@@ -1,4 +1,4 @@
-package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo;
+package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.documentos;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -20,7 +20,7 @@ public class Cliente implements Serializable {
     @EqualsAndHashCode.Include
     private String codigo;
 
-    private String cedula, nombre, email;
+    private String cedula, nombre, email, ciudad, nickname, fotoPerfil;
     private List<String> telefono;
 
     @Builder

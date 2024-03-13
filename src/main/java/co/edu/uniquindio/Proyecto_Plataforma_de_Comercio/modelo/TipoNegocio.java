@@ -5,5 +5,8 @@ public enum TipoNegocio {
     PANADERIA,
     TIENDA,
     BIBLIOTECA,
-    SUPERMERCADO
+    SUPERMERCADO,
+    CAFETERIA,
+    BAR,
+    RESTAURANTE
 }

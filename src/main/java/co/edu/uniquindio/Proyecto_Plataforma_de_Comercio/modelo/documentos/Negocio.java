@@ -1,5 +1,6 @@
-package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo;
+package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.documentos;
 
+import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.TipoNegocio;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

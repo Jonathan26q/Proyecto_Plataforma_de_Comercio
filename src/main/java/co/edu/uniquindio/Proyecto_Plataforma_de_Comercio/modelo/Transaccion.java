@@ -1,10 +1,10 @@
 package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo;
 
+import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.entidades.Pago;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.awt.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
