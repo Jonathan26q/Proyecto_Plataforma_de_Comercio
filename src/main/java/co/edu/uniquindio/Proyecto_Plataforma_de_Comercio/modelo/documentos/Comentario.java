@@ -1,5 +1,7 @@
 package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.documentos;
 
+import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.entidades.CodigoDescuento;
+import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.entidades.FotosComentario;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -25,6 +27,8 @@ public class Comentario implements Serializable {
     private String respuesta;
     private int calificacion;
     private LocalDateTime fecha;
+    private CodigoDescuento bono;
+    private FotosComentario fotosComentario;
 
     @Builder
     public Comentario(String mensaje, String respuesta){

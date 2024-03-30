@@ -61,6 +61,20 @@ public class ClienteTest {
     }
 
     @Test
+    public void listarClienteTest(){
+
+        //Obtenemos la lista de todos los cliente(Por ahora 1)
+        List<Cliente> clientes = clienteRepo.findAll();
+
+        //imprimimos los clientes, se hace uso de una sola función
+        clientes.forEach(System.out::println);
+
+        //Verificamos que solo exista un cliente
+        Assertions.assertEquals(1, clientes.size());
+
+    }
+
+    @Test
     public void eliminarClienteTest(){
         //Borramos el cliente con el id XXXXXXX
         clienteRepo.deleteById("65dfc0b0a837600ac94f9d75");
@@ -70,7 +84,9 @@ public class ClienteTest {
         Assertions.assertNotNull(cliente);
     }
 
-    @Test
+
+
+   /* @Test
     public void dtoTest(){
         RegistroUsuarioDTO registro = new RegistroUsuarioDTO(
                 nombre: "",
@@ -83,7 +99,7 @@ public class ClienteTest {
         );
 
         System.out.println(registro.nickname());
-    }
+    }*/
     /*
     @Test
     public void listarTest(){

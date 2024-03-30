@@ -14,6 +14,7 @@ import java.util.Objects;
 //solo se debe considerar la llave primaria de la clase entonces por ese se coloca el onlyExpl,aca y en el Id
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Document("Clientes")
+@NoArgsConstructor
 public class Cliente implements Serializable {
 
     @Id
