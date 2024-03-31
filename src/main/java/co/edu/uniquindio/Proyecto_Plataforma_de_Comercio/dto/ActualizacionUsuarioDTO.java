@@ -8,7 +8,7 @@ public record ActualizacionUsuarioDTO(
         @NotBlank String id,
         @NotBlank @Length(max = 100) String nombre,
         @NotBlank String fotoPerfil,
-        @NotBlank String nickname,
+        @NotBlank @Length(max = 100) String nickname,
         @NotBlank @Email String email,
         @NotBlank String ciudadResidencia
 ) {

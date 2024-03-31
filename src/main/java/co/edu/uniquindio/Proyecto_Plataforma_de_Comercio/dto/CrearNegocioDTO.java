@@ -6,7 +6,7 @@ import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.enums.TipoNegoci
 import jakarta.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
 
-public record EditarNegocioDTO(
+public record CrearNegocioDTO(
 
         @NotBlank String id,
         @NotBlank String imagenes,
@@ -17,6 +17,7 @@ public record EditarNegocioDTO(
         @NotBlank @Length (max = 100) String descripcion,
         @NotBlank Horario horarios,
         @NotBlank Ubicacion ubicacion
+
 
         ) {
 }
