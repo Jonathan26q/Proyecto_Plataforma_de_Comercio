@@ -8,9 +8,8 @@ public record EditarPerfilDTO(
 
         @NotBlank @Length(max = 100) String nombre,
         @NotBlank @Length(max = 100) String apellido,
-        @NotBlank @Length(max = 100) String nickName,
-        @NotBlank @Email String email,
-        @NotBlank String ciudadResidencia,
+        @NotBlank @Length(max = 100) @Email String email,
+        @NotBlank @Length(max = 50) String ciudadResidencia,
         @NotBlank String fotoPerfil
 
 ) {

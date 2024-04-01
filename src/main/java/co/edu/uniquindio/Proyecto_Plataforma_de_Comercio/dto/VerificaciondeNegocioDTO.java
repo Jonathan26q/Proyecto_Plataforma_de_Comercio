@@ -10,11 +10,11 @@ public record VerificaciondeNegocioDTO(
         @NotBlank String id,
         @NotBlank String fotoNegocio,
         @NotBlank @Length(max = 100) String nombreNegocio,
-        @NotBlank @Length(max = 100) String descripcionNegocio,
+        @NotBlank @Length(max = 200) String descripcionNegocio,
         @NotBlank @Length(max = 100) String direccionNegocio,
         @NotBlank String ubicacion,
         @NotBlank String telefonoNegocio,
-        @NotBlank String ciudadNegocio,
+        @NotBlank @Length(max = 50) String ciudadNegocio,
         @NotBlank Horario horarios,
         @NotBlank @Length(max = 100) String comentario
 

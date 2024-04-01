@@ -14,7 +14,7 @@ public record CrearNegocioDTO(
         @NotBlank @Length (max = 100) String direccion,
         @NotBlank String telefonos,
         @NotBlank TipoNegocio categoria,
-        @NotBlank @Length (max = 100) String descripcion,
+        @NotBlank @Length (max = 200) String descripcion,
         @NotBlank Horario horarios,
         @NotBlank Ubicacion ubicacion
 

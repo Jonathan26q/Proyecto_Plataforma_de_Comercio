@@ -15,7 +15,7 @@ public class ComentarioServicioImpl {
 
     private final ComentarioRepo comentarioRepo;
     private final ClienteServicio clienteServicio;
-    private final NegocioServicio negocioServicio;
+    //private final NegocioServicio negocioServicio;
 
 
 }
