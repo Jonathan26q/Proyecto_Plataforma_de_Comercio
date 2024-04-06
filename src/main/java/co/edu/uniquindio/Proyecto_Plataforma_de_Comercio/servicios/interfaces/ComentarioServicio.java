@@ -4,6 +4,8 @@ public interface ComentarioServicio {
 
     void crearComentario();
 
+    void insertarImagen();
+
     void listarComentariosNegocio();
 
     void responderComentario();
