@@ -7,6 +7,7 @@ public record CambioPasswordDTO(
 
         @NotBlank String id,
         @NotBlank @Length(min = 8) String passwordNuevo,
+        @NotBlank @Length(min = 8) String repetirPassword,
         @NotBlank String token
 
 
