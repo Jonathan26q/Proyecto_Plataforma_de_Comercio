@@ -35,5 +35,5 @@ public class Negocio implements Serializable {
     private List<Telefonos> telefonos;
     private Cliente codigoCliente;
     private List<String> favoritos;
-
+    private float calificacion;
 }

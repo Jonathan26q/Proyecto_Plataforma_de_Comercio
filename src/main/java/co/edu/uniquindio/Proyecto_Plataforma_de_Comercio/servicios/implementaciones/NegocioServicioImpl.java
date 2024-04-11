@@ -36,7 +36,11 @@ public class NegocioServicioImpl implements NegocioServicio {
         //instanciamos el negocio
         Negocio negocio = new Negocio();
 
+        negocio.setNombre(crearNegocioDTO.nombreNegocio());
 
+        Negocio negocioGuardado = negocioRepo.save(negocio);
+
+        return negocioGuardado.getCodigo();
 
     }
 
