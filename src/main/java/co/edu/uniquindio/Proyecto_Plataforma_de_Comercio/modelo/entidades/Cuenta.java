@@ -8,11 +8,14 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @Setter
 @Getter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Cuenta {
 
+    @Id
+    @EqualsAndHashCode.Include
+    private int id;
     private String email;
     private String nickname;
     private String password;
     private EstadoRegistro estadoRegistro;
-
 }

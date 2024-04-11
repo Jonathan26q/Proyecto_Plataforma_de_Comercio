@@ -27,7 +27,7 @@ public class Cliente extends Cuenta implements Serializable {
 
     @Builder
     public Cliente(String email, String nickname, String password, String cedula, String nombre, String apellido, String ciudad,  List<String> telefono, String fotoPerfil) {
-        super(email, nickname, password, null);
+        //super(email, nickname, password, null);
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;

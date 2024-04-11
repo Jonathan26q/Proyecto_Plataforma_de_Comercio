@@ -2,9 +2,12 @@ package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.servicios.implementaci
 
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.dto.*;
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.documentos.Cliente;
+import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.entidades.Cuenta;
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.enums.EstadoRegistro;
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.repositorios.ClienteRepo;
+import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.repositorios.CuentaRepo;
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.servicios.interfaces.ClienteServicio;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,13 +17,12 @@ import java.util.Optional;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class ClienteServicioImpl implements ClienteServicio {
 
     private final ClienteRepo clienteRepo;
+    private final CuentaRepo cuentaRepo;
 
-    public ClienteServicioImpl(ClienteRepo clienteRepo){
-        this.clienteRepo = clienteRepo;
-    }
 
     private boolean existeEmail(String emain){
         return clienteRepo.findByEmail(emain).isPresent();
@@ -134,6 +136,19 @@ public class ClienteServicioImpl implements ClienteServicio {
 
     @Override
     public void iniciarSesion(InicioSesionDTO inicioSesionDTO) throws Exception {
+
+        Optional<Cuenta> optionalCuenta = cuentaRepo.findByEmail(inicioSesionDTO.email());
+        if (optionalCuenta.isEmpty()) {
+            throw new Exception("cliente no existe");
+        }
+        else {
+            if(inicioSesionDTO.password().equals(optionalCuenta.get().getPassword())){
+
+            }
+            else{
+                throw new Exception("Contraseña incorrecta");
+            }
+        }
 
     }
 
