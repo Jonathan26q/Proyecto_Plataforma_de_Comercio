@@ -10,7 +10,5 @@ import java.util.Optional;
 @Repository
 //(asumiendo que la llave primaria del documento Negocio es de tipo String):
 public interface NegocioRepo extends MongoRepository<Negocio, String> {
-
     Optional<Negocio> findByCodigo (String codigo);
-
 }

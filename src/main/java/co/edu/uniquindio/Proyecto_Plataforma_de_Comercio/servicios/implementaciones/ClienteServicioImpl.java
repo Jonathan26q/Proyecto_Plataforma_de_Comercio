@@ -23,7 +23,6 @@ public class ClienteServicioImpl implements ClienteServicio {
     private final ClienteRepo clienteRepo;
     private final CuentaRepo cuentaRepo;
 
-
     private boolean existeEmail(String emain){
         return clienteRepo.findByEmail(emain).isPresent();
     }
