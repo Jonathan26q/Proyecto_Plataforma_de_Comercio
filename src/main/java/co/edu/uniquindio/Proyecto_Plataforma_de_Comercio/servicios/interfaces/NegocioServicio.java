@@ -13,7 +13,7 @@ public interface NegocioServicio {
     List<ItemNegocioDTO> listarNegocios();
     List <ItemClienteDTO> listarCliente();
     String compartirNegocio();
-    void listarNegocioPorEstado()throws Exception; //preguntar como listar por estado
+    List<EstadoNegocioDTO> listarNegocioPorEstado()throws Exception; //preguntar como listar por estado
     void aprobar(CambioEstadoDTO cambioEstadoDTO)throws Exception;
     void rechazar(CambioEstadoDTO cambioEstadoDTO)throws Exception;
 }
