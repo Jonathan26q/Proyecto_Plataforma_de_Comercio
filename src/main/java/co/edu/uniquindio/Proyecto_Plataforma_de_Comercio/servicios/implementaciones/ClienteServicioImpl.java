@@ -134,14 +134,14 @@ public class ClienteServicioImpl implements ClienteServicio {
     }
 
     @Override
-    public void iniciarSesion(InicioSesionDTO inicioSesionDTO) throws Exception {
+    public void iniciarSesion(LoginDTO loginDTO) throws Exception {
 
-        Optional<Cuenta> optionalCuenta = cuentaRepo.findByEmail(inicioSesionDTO.email());
+        Optional<Cuenta> optionalCuenta = cuentaRepo.findByEmail(loginDTO.email());
         if (optionalCuenta.isEmpty()) {
             throw new Exception("cliente no existe");
         }
         else {
-            if(inicioSesionDTO.password().equals(optionalCuenta.get().getPassword())){
+            if(loginDTO.password().equals(optionalCuenta.get().getPassword())){
 
             }
             else{

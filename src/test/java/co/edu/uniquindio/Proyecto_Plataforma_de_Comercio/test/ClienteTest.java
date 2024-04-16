@@ -22,8 +22,13 @@ public class ClienteTest {
     @Test
     public void registrarClienteTest(){
         //Creamos el cliente con sus propiedades
+<<<<<<< HEAD
         Cliente cliente = Cliente.builder()
                 .cedula("123265457")
+=======
+        /*Cliente cliente = Cliente.builder()
+                .cedula("12326545")
+>>>>>>> f5909d90a4fe76f56c56c0b12e5a44cf347e8a5b
                 .nombre("Pepito Perez")
                 .email("pepito1@mail.com")
                 .telefono(List.of("121212", "3223322")).build();
@@ -32,7 +37,7 @@ public class ClienteTest {
         Cliente registro = clienteRepo.save(cliente);
 
         //Verificamos que se haya guardado validando que no sea null
-        Assertions.assertNotNull(registro);
+        Assertions.assertNotNull(registro);*/
     }
     @Test
     public void actualizarClienteTest(){

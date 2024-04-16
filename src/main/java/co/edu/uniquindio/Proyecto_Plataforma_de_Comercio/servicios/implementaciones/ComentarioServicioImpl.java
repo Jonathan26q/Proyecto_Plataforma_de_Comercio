@@ -23,6 +23,9 @@ import java.util.Optional;
 public class ComentarioServicioImpl implements ComentarioServicio {
 
     private final ComentarioRepo comentarioRepo;
+<<<<<<< HEAD
+    //private final ClienteServicio clienteServicio;
+=======
     private final ClienteServicio clienteServicio;
 
     private Comentario traerCodigoComentario(String codigo) throws Exception{
@@ -124,6 +127,7 @@ public class ComentarioServicioImpl implements ComentarioServicio {
         comentario.setMensaje(editarComentarioDTO.comentario());
 
     }
+>>>>>>> 29c144246c319d9c886cc013c59eabb82bc24dcf
     //private final NegocioServicio negocioServicio;
 
 
