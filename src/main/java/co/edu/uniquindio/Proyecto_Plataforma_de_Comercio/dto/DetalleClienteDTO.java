@@ -8,8 +8,8 @@ public record DetalleClienteDTO(
         @NotBlank String id,
         @NotBlank @Length(max = 100) String nombre,
         String fotoPerfil,
-        @NotBlank @Length(max = 100) String nickName,
-        @NotBlank @Email String email,
-        @NotBlank String ciudadResidencia
+        @NotBlank @Length(max = 10) String nickName,
+        @NotBlank @Length(max = 100) @Email String email,
+        @NotBlank @Length(max = 50) String ciudadResidencia
 ) {
 }

@@ -9,7 +9,11 @@ import java.util.Optional;
 
 @Repository
 public interface CuentaRepo extends MongoRepository<Cuenta, Integer> {
+<<<<<<< HEAD
     Optional<Cuenta> findById(Integer integer);
 
+=======
+    Optional<Cuenta> findById(int id);
+>>>>>>> 29c144246c319d9c886cc013c59eabb82bc24dcf
     Optional<Cuenta> findByEmail(String email);
 }

@@ -12,7 +12,7 @@ public record PendientesPorAprobarDTO(
         @NotBlank @Length(max = 200) String descripcionNegocio,
         @NotBlank @Length(max = 100) String direccionNegocio,
         @NotBlank String telefonoNegocio,
-        @NotBlank String ciudadNegocio
+        @NotBlank @Length(max = 50) String ciudadNegocio
 
 ) {
 }
