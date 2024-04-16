@@ -119,7 +119,7 @@ public class NegocioServicioImpl implements NegocioServicio {
 
     @Override
     public DetalleNegocioDTO buscarNegocios(String idNegocio) throws Exception {
-
+/*
         //
         Optional<Negocio> optionalNegocio = negocioRepo.findByCodigo(idNegocio);
 
@@ -145,12 +145,13 @@ public class NegocioServicioImpl implements NegocioServicio {
                 negocio.getUbicacion()
         );
 
-        return detalleNegocioDTO;
+        return detalleNegocioDTO; */
+        return null;
     }
 
     @Override
     public List<ItemNegocioDTO> listarNegocios() {
-
+/*
         //Buscamos el negocio
         List<Negocio> negocios = negocioRepo.findAll();
         // no es necesario porque se utiliza stream List<ItemNegocioDTO> items = new ArrayList<>()
@@ -170,7 +171,8 @@ public class NegocioServicioImpl implements NegocioServicio {
                         n.getHorarios(),
                         n.getUbicacion()
                 )
-        ).collect(Collectors.toList());
+        ).collect(Collectors.toList());*/
+        return null;
     }
 
     @Override

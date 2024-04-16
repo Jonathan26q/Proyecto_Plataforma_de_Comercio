@@ -1,6 +1,7 @@
 package co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.servicios.implementaciones;
 
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.dto.ComentarioItemDTO;
+import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.dto.EditarComentarioDTO;
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.dto.IngresarComentarioDTO;
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.documentos.Comentario;
 import co.edu.uniquindio.Proyecto_Plataforma_de_Comercio.modelo.documentos.Negocio;
@@ -76,17 +77,51 @@ public class ComentarioServicioImpl implements ComentarioServicio {
     }
 
     @Override
-    public void responderComentario() {
+    public String responderComentario(IngresarComentarioDTO ingresarComentarioDTO) {
+
+        //Creamos la respuesta
+        Comentario respuesta = new Comentario();
+
+        respuesta.setCodigo(ingresarComentarioDTO.idComentario());
+        respuesta.setRespuesta(ingresarComentarioDTO.comentario());
+        respuesta.setFecha(ingresarComentarioDTO.horaComentario());
+
+        Comentario respuestaGuardada = comentarioRepo.save(respuesta);
+
+        return respuestaGuardada.getCodigo();
 
     }
 
     @Override
-    public void eliminarComentario() {
+    public void eliminarComentario(String idComentario) throws Exception {
+
+        //buscamos el comentario a eliminar
+        Optional<Comentario> optionalComentario = comentarioRepo.findByCodigo(idComentario);
+
+        if (optionalComentario.isEmpty()){
+            throw new Exception("comentario no encontrado");
+        }
+
+        Comentario comentario = optionalComentario.get();
+
+        comentarioRepo.delete(comentario);
 
     }
 
     @Override
-    public void editarComentario() {
+    public void editarComentario(EditarComentarioDTO editarComentarioDTO)throws Exception {
+
+        //buscamos el comentario a editar
+        Optional<Comentario> optionalComentario = comentarioRepo.findByCodigo(editarComentarioDTO.idComentario());
+
+        //lanzamos excepcion sino encuentra el comentario
+        if (optionalComentario.isEmpty()){
+            throw new Exception("Comentario no encontrado");
+        }
+
+        //traemos el objeto comentario
+        Comentario comentario = optionalComentario.get();
+        comentario.setMensaje(editarComentarioDTO.comentario());
 
     }
     //private final NegocioServicio negocioServicio;

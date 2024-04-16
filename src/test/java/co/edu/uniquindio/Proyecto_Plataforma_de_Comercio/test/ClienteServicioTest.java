@@ -15,14 +15,14 @@ public class ClienteServicioTest {
     private ClienteServicio clienteServicio;
 
     @Test
-    public void registrarTest()  throws Exception{
+    public void registrarClienteTest()  throws Exception{
         //se crea un objeto de tipo RegistroUsuarioDTO
         RegistroUsuarioDTO registroUsuarioDTO = new RegistroUsuarioDTO(
-                "1094910",
-                "jonat",
+                "10949104",
+                "jonath",
                 "more",
                 "Jonathan26q",
-                "jamorenol@uqvirtual.edu.co",
+                "jamorenolo@uqvirtual.edu.co",
                 "Armenia",
                 "123456",
                 "123456",

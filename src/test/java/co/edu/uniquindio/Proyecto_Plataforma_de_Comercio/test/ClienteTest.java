@@ -23,10 +23,10 @@ public class ClienteTest {
     public void registrarClienteTest(){
         //Creamos el cliente con sus propiedades
         Cliente cliente = Cliente.builder()
-                .cedula("12326545")
+                .cedula("123265457")
                 .nombre("Pepito Perez")
-                .email("pepito@mail.com")
-                .telefono(List.of("12121", "322332")).build();
+                .email("pepito1@mail.com")
+                .telefono(List.of("121212", "3223322")).build();
 
         //Guardamos el cliente
         Cliente registro = clienteRepo.save(cliente);
