@@ -13,8 +13,6 @@ public interface ClienteServicio {
 
     void eliminarCliente(String idCliente)throws Exception;
 
-    void iniciarSesion(InicioSesionDTO inicioSesionDTO)throws Exception;
-
     void enviarLinkRecuparcion(String email)throws Exception;
     void recuperarPassword(RecuperacionPasswordDTO recuperacionPasswordDTO)throws Exception;
 
